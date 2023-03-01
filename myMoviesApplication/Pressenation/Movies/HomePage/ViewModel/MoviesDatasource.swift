@@ -75,7 +75,7 @@ class MoviesDataSource: NSObject, UITableViewDataSource, UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "HomePageTraillerCell", for: indexPath) as! HomePageTraillerCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "HomePageTraillerCell", for: indexPath) as! HomePageTraillerCell 
 //            cell.configure(with: trailer[indexPath.row])
             
             return cell
