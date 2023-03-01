@@ -45,7 +45,7 @@ class UpComingDataSource: NSObject,UITableViewDataSource, UITableViewDelegate  {
       
         let cell = tableView.dequeueReusableCell(withIdentifier: "UpComingCell", for: indexPath) as! UpComingCell
         cell.backgroundColor = .black
-        cell.configure()
+//        cell.configure()
         
         return cell
             
