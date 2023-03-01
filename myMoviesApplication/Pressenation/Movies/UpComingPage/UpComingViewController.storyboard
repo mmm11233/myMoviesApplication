@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qRk-2f-BQX">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Coming Soon-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="UpComingViewControllerNC" id="Y6W-OH-hqX" customClass="UpComingViewController" customModule="myMoviesApplication" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="200" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="2wP-HO-oGg">
+                                <rect key="frame" x="0.0" y="103" width="393" height="666"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="2wP-HO-oGg" secondAttribute="trailing" id="T7T-ij-OAY"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="2wP-HO-oGg" secondAttribute="bottom" id="hWp-Si-vr5"/>
+                            <constraint firstItem="2wP-HO-oGg" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="idU-vW-dNk"/>
+                            <constraint firstItem="2wP-HO-oGg" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="nBU-Tk-poe"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Coming Soon" image="UpComing" id="2su-ux-GDD"/>
+                    <navigationItem key="navigationItem" id="bkf-CV-ii4"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="tableView" destination="2wP-HO-oGg" id="jeq-9i-tDI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1026.7175572519084" y="3.5211267605633805"/>
+        </scene>
+        <!--Coming Soon-->
+        <scene sceneID="ovf-Vb-KsE">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qRk-2f-BQX" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Coming Soon" image="UpComing" id="s8D-W1-eBZ"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vCF-pu-O3O">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="u8D-8q-zl1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CiB-SU-mQX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="100" y="3.5211267605633805"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="UpComing" width="24" height="18"/>
+    </resources>
+</document>

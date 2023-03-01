@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main Tab Bar View Controller-->
+        <scene sceneID="CqV-vX-KFA">
+            <objects>
+                <tabBarController restorationIdentifier="MainTabBarViewController" storyboardIdentifier="MainTabBarViewController" id="3GX-2N-hYH" customClass="MainTabBarViewController" customModule="myMoviesApplication" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="37j-KR-lee">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="SHS-rP-nar" kind="relationship" relationship="viewControllers" id="wnh-ke-NuB"/>
+                        <segue destination="2or-Kw-pJ9" kind="relationship" relationship="viewControllers" id="bur-eF-cQ5"/>
+                        <segue destination="zOo-E4-9iz" kind="relationship" relationship="viewControllers" id="kIj-vf-BeH"/>
+                        <segue destination="aAd-dr-VfR" kind="relationship" relationship="viewControllers" id="Wfv-el-aOm"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uxe-Y8-W7d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1030" y="-1511"/>
+        </scene>
+        <!--HomeViewControllerNC-->
+        <scene sceneID="ufm-9G-kBl">
+            <objects>
+                <viewControllerPlaceholder storyboardName="HomeViewController" referencedIdentifier="HomeViewControllerNC" id="SHS-rP-nar" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" image="Home" id="fM5-6a-gq1"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ohF-FT-XBO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-233" y="-1701"/>
+        </scene>
+        <!--UpComingViewControllerNC-->
+        <scene sceneID="Db7-TR-fIZ">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="UpComingViewController" storyboardName="UpComingViewController" referencedIdentifier="UpComingViewControllerNC" id="2or-Kw-pJ9" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" image="UpComing" id="gj3-dv-EAQ"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sK0-aw-jGn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-242" y="-1570"/>
+        </scene>
+        <!--SearchViewController-->
+        <scene sceneID="XQI-TE-4EQ">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="SearchViewController" storyboardName="SearchViewController" referencedIdentifier="SearchViewController" id="zOo-E4-9iz" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" image="search" id="vT6-Jt-jYT"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rjU-ML-R2c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-233" y="-1442"/>
+        </scene>
+        <!--DownloadsViewController-->
+        <scene sceneID="frX-3j-6eB">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="DownloadsViewController" storyboardName="DownloadsViewController" referencedIdentifier="DownloadsViewController" id="aAd-dr-VfR" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" image="Download" id="XKo-XM-Kik"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ciB-qz-apU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-233" y="-1299"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Download" width="16" height="16"/>
+        <image name="Home" width="20" height="22"/>
+        <image name="UpComing" width="24" height="18"/>
+        <image name="search" width="20" height="20"/>
+    </resources>
+</document>
