@@ -9,7 +9,7 @@ import UIKit
 
 class HomePageTraillerCell: UITableViewCell {
     
-    @IBOutlet weak var trailerImg: UIImageView!
+    @IBOutlet weak var topRatedImg: UIImageView!
     
     @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var downloadButton: UIButton!
@@ -28,13 +28,13 @@ class HomePageTraillerCell: UITableViewCell {
         playButton.layer.cornerRadius = 5
         playButton.layer.borderWidth = 1
         playButton.layer.borderColor = UIColor.white.cgColor
-
+        
         downloadButton.backgroundColor = .clear
         downloadButton.layer.cornerRadius = 5
         downloadButton.layer.borderWidth = 1
         downloadButton.layer.borderColor = UIColor.white.cgColor
-          addradient()
-       
+        addradient()
+        
     }
     
     
@@ -50,22 +50,22 @@ class HomePageTraillerCell: UITableViewCell {
     
     
     private func addradient() {
-       var gradient: CAGradientLayer = {
+        var gradient: CAGradientLayer = {
             let gradient = CAGradientLayer()
             gradient.type = .axial
             gradient.colors = [
                 UIColor.clear.cgColor,
-                UIColor.systemBackground.cgColor
+                UIColor.black.cgColor
             ]
-            gradient.locations = [0.0, 5]
+            gradient.locations = [0.5, 2.5]
             return gradient
         }()
         
         gradient.frame = self.bounds
-        trailerImg.layer.addSublayer(gradient)
+        topRatedImg.layer.addSublayer(gradient)
     }
     
-   
+    
     func configure(with item: MoviesViewModel) {
         
         
@@ -75,7 +75,7 @@ class HomePageTraillerCell: UITableViewCell {
             do {
                 var datas = try data
                 DispatchQueue.main.async {
-                    self.trailerImg.image = UIImage (data: datas!)
+                    self.topRatedImg.image = UIImage (data: datas!)
                 }
             }catch{
                 

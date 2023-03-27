@@ -13,7 +13,7 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="37j-KR-lee">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
@@ -47,10 +47,10 @@
             </objects>
             <point key="canvasLocation" x="-242" y="-1570"/>
         </scene>
-        <!--SearchViewController-->
+        <!--SearchViewControllerNC-->
         <scene sceneID="XQI-TE-4EQ">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="SearchViewController" storyboardName="SearchViewController" referencedIdentifier="SearchViewController" id="zOo-E4-9iz" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardIdentifier="SearchViewController" storyboardName="TopSearchViewController" referencedIdentifier="SearchViewControllerNC" id="zOo-E4-9iz" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" image="search" id="vT6-Jt-jYT"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rjU-ML-R2c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

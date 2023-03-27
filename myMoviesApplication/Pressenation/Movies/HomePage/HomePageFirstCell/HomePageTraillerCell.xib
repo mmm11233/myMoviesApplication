@@ -63,9 +63,9 @@
             <connections>
                 <outlet property="downloadButton" destination="1ad-zp-adp" id="eaf-l0-dUE"/>
                 <outlet property="playButton" destination="LdT-lL-dyk" id="srp-TD-sf2"/>
-                <outlet property="trailerImg" destination="z3H-G5-Ucl" id="FeD-gh-uNp"/>
+                <outlet property="topRatedImg" destination="z3H-G5-Ucl" id="FeD-gh-uNp"/>
             </connections>
-            <point key="canvasLocation" x="129.7709923664122" y="-51.056338028169016"/>
+            <point key="canvasLocation" x="128" y="-217"/>
         </tableViewCell>
     </objects>
     <resources>

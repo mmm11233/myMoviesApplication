@@ -17,18 +17,19 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="197821364819865" translatesAutoresizingMaskIntoConstraints="NO" id="43p-bP-TQc">
-                        <rect key="frame" x="0.0" y="0.0" width="396" height="298"/>
+                        <rect key="frame" x="20" y="20" width="356" height="200"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="200" id="bd4-S1-qTe"/>
+                        </constraints>
                     </imageView>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="43p-bP-TQc" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="0wY-Ac-Q9U"/>
-                <constraint firstItem="43p-bP-TQc" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="3xq-bc-ks0"/>
-                <constraint firstItem="43p-bP-TQc" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="CGc-MP-E09"/>
-                <constraint firstAttribute="trailing" secondItem="43p-bP-TQc" secondAttribute="trailing" id="OZY-fU-Jyo"/>
-                <constraint firstAttribute="bottom" secondItem="43p-bP-TQc" secondAttribute="bottom" id="ecf-8A-nFD"/>
+                <constraint firstItem="43p-bP-TQc" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="20" id="ETF-J2-7RT"/>
+                <constraint firstItem="43p-bP-TQc" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="XLg-sr-IMV"/>
+                <constraint firstAttribute="trailing" secondItem="43p-bP-TQc" secondAttribute="trailing" constant="20" id="ueJ-FR-yPp"/>
             </constraints>
             <size key="customSize" width="396" height="298"/>
             <connections>

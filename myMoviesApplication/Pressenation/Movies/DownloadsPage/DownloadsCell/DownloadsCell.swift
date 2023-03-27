@@ -1,21 +1,19 @@
 //
-//  UpComingCell.swift
+//  DownloadsCell.swift
 //  myMoviesApplication
 //
-//  Created by Mariam Joglidze on 24.02.23.
+//  Created by Mariam Joglidze on 02.03.23.
 //
 
 import UIKit
 
-class UpComingCell: UITableViewCell {
-    
-    @IBOutlet weak var upComingImg: UIImageView!
-    
-    @IBOutlet weak var upComingLbl: UILabel!
+class DownloadsCell: UITableViewCell {
+
+    @IBOutlet weak var downloadImg: UIImageView!
+    @IBOutlet weak var downloadTitle: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -23,8 +21,8 @@ class UpComingCell: UITableViewCell {
 
     }
     
-    func configure(with item: UpcomingViewModel) {
-        upComingLbl.text = item.title
+    func configure(with item: MoviesViewModel ) {
+        downloadTitle.text = item.title
         
         URLSession.shared.dataTask(with: URLRequest(url: URL(string: "https://image.tmdb.org/t/p/w342/\(item.image ?? "error")")!)) {
             (data, response,error) in
@@ -32,7 +30,7 @@ class UpComingCell: UITableViewCell {
             do {
                 var datas = try data
                 DispatchQueue.main.async {
-                    self.upComingImg.image = UIImage (data: datas!)
+                    self.downloadImg.image = UIImage (data: datas!)
                 }
             }catch{
                 
@@ -41,5 +39,7 @@ class UpComingCell: UITableViewCell {
         .resume ()
         
     }
+
+    }
     
-}
+

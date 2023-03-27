@@ -15,6 +15,7 @@ final  class MoviesListViewModel {
     var onReceivedTrendingTV: (([MoviesViewModel]) -> Void)?
     var onReceivedPopular: (([MoviesViewModel]) -> Void)?
     var onReceivedupcomingMovies: (([MoviesViewModel]) -> Void)?
+    var onReceivedTopRated: (([MoviesViewModel]) -> Void)?
 
 
     
@@ -56,6 +57,15 @@ final  class MoviesListViewModel {
             DispatchQueue.main.async {
                 
                 self.onReceivedupcomingMovies?(movies.result.map(MoviesViewModel.init))
+            }
+        }
+    }
+    
+    func fetchTopRated() {
+        moviesService.fetchTopRated() { movies in
+            DispatchQueue.main.async {
+                
+                self.onReceivedTopRated?(movies.result.map(MoviesViewModel.init))
             }
         }
     }

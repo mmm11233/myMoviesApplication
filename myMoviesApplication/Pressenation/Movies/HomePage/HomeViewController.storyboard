@@ -19,6 +19,12 @@
                                 <rect key="frame" x="0.0" y="103" width="393" height="666"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="separatorColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <scrollView key="tableFooterView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" id="SoZ-3B-Jr6">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <viewLayoutGuide key="contentLayoutGuide" id="17g-bW-n4V"/>
+                                    <viewLayoutGuide key="frameLayoutGuide" id="l32-gw-cld"/>
+                                </scrollView>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
@@ -32,11 +38,10 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="Home" id="ciu-CW-3u1"/>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Title" id="ieM-qh-1Lr">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="CUb-3U-3xj"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Title" id="ieM-qh-1Lr"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="scrollView" destination="SoZ-3B-Jr6" id="4gI-Nr-RRf"/>
                         <outlet property="tableView" destination="VHg-Zw-Cfq" id="3I8-bj-dhf"/>
                     </connections>
                 </viewController>
