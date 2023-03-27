@@ -1,22 +1,29 @@
 //
-//  HomePageTrendingCollectionCell.swift
+//  SearchCell.swift
 //  myMoviesApplication
 //
-//  Created by Mariam Joglidze on 23.02.23.
+//  Created by Mariam Joglidze on 02.03.23.
 //
 
 import UIKit
 
-class HomePageTrendingCollectionCell: UICollectionViewCell {
+class SearchCell: UITableViewCell {
 
-    @IBOutlet weak var trendingImg: UIImageView!
+    @IBOutlet weak var topSearchImg: UIImageView!
+    @IBOutlet weak var topSearchTitle: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+
     }
 
-    func configure(with item: MoviesViewModel) {
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+
+        
+    }
+    func configure(with item: TopSearcheViewModel) {
+        topSearchTitle.text = item.title
         
         
         URLSession.shared.dataTask(with: URLRequest(url: URL(string: "https://image.tmdb.org/t/p/w342/\(item.image ?? "error")")!)) {
@@ -25,7 +32,7 @@ class HomePageTrendingCollectionCell: UICollectionViewCell {
             do {
                 var datas = try data
                 DispatchQueue.main.async {
-                    self.trendingImg.image = UIImage (data: datas!)
+                    self.topSearchImg.image = UIImage (data: datas!)
                 }
             }catch{
                 

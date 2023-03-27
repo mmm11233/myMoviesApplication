@@ -1,20 +1,18 @@
 //
-//  MoviesViewModel.swift
+//  UpcomingViewModel.swift
 //  myMoviesApplication
 //
-//  Created by Mariam Joglidze on 23.02.23.
+//  Created by Mariam Joglidze on 01.03.23.
 //
 
 import Foundation
 
-struct MoviesViewModel {
+struct UpcomingViewModel {
     let image: String?
     let title: String?
-    let description: String?
     
     init(movie: Movie) {
         image = movie.posterPath
         title = movie.originalTitle
-        description = movie.overview
     }
 }
