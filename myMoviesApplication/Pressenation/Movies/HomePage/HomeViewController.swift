@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import Lottie
 class HomeViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
@@ -15,7 +14,6 @@ class HomeViewController: UIViewController {
     private var viewModel: MoviesListViewModel!
     private var dataSource: MoviesDataSource!
     private var moviesService: MoviesService!
-    private var animationView = LottieAnimationView()
 
      
     
@@ -32,37 +30,8 @@ class HomeViewController: UIViewController {
         navigationItem.standardAppearance = barAppearance
         navigationItem.scrollEdgeAppearance = barAppearance
         
-        
-        view?.addSubview(animationView)
-        
-        animationView.translatesAutoresizingMaskIntoConstraints = false
-        animationView.isUserInteractionEnabled = false
-        NSLayoutConstraint.activate([
-            animationView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            animationView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            animationView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            animationView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-        ])
-        
-        dataSource.animationStart = {  [self] movie in
-            if let animation = LottieAnimation.named("loading.json") {
-                animationView.animation = animation
-                animationView.play()
-                animateSelection(movie)
-            }
-            
-        }
-        
     }
-    
-    func animateSelection(_ movie: MoviesViewModel) {
-        UIView.animate(withDuration: 20) {
-            let storyboard = UIStoryboard(name: "DetailsViewController", bundle: nil)
-            let vC = storyboard.instantiateViewController(withIdentifier: "DetailsViewController") as! DetailsViewController
-            vC.detailsMovies = movie
-            self.navigationController?.pushViewController(vC, animated: true)
-        }
-    }
+
     
     
     private func configureNavBar() {

@@ -12,7 +12,7 @@ class UpComingDataSource: NSObject,UITableViewDataSource, UITableViewDelegate  {
     private let tableView: UITableView
     private var Upcoming = [UpcomingViewModel]()
     private let viewModel: UpcomingListViewModel
-    
+
     
     init(
         tableView: UITableView,
@@ -51,6 +51,20 @@ class UpComingDataSource: NSObject,UITableViewDataSource, UITableViewDelegate  {
         return cell
         
     }
+   
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.alpha = 0
+        let transform = CATransform3DTranslate(CATransform3DIdentity, 0, 200, 0)
+        cell.layer.transform = transform
+
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
+            cell.alpha = 1
+            cell.layer.transform = CATransform3DIdentity
+        })
+    }
+}
+
     
     
     
@@ -72,7 +86,7 @@ class UpComingDataSource: NSObject,UITableViewDataSource, UITableViewDelegate  {
 //            return 50
 //        }
     
-}
+
 
     
 

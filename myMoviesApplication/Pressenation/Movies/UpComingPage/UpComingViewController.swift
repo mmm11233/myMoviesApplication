@@ -22,6 +22,7 @@ class UpComingViewController: UIViewController {
         navigationController?.navigationItem.largeTitleDisplayMode = .always
         navigationController?.navigationBar.backgroundColor = .black
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        self.view.backgroundColor = .black
 
         configureViewModel()
         

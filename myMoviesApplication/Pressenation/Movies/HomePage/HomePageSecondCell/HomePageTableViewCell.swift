@@ -7,20 +7,17 @@
 
 import UIKit
 
-protocol MoviesDetailsDelegate {
-    
+protocol MoviesDetailsDelegate: class {
     func didSelect(movie: MoviesViewModel)
-    
 }
 
 
 class HomePageTrendingCell: UITableViewCell, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
-    
-    
     @IBOutlet weak var collectionView: UICollectionView!
     var dataSourse: [MoviesViewModel] = []
-    var delegate: MoviesDetailsDelegate!
+    weak var delegate: MoviesDetailsDelegate!
+    var selectedIndex = 2
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -55,23 +52,61 @@ class HomePageTrendingCell: UITableViewCell, UICollectionViewDataSource, UIColle
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return .init(width: 180, height: 230)
+        
     }
+    
+    
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         10
     }
     
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         .init(top: 0, left: 10, bottom: 0, right: 10)
     }
     
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
+//        let storyboard = UIStoryboard(name: "DetailsViewController", bundle: nil)
+//        let vC = storyboard.instantiateViewController(withIdentifier: "DetailsViewController") as! DetailsViewController
+//        vC.detailsMovies = movie
+//        navigationController?.pushViewController(vC, animated: true)
+
         delegate.didSelect(movie: dataSourse[indexPath.row])
         
+        if let cell = collectionView.cellForItem(at: indexPath){
+            cell.animate()
+            self.selectedIndex =  indexPath.row
+            collectionView.reloadData()
+        }
     }
     
-
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+       cell.alpha = 0
+       UIView.animate(withDuration: 0.8) {
+           cell.alpha = 1
+       }
+   }
     
 }
+       
+
+
+    
+extension UICollectionViewCell {
+    func animate(completion: (() -> Void)? = nil) {
+        let animation = CABasicAnimation(keyPath: "transform.scale")
+        animation.duration = 1.9
+        animation.fromValue = 1.5
+        animation.toValue = 0.8
+        animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+        layer.add(animation, forKey: "scale")
+    }
+}
+
+
+
+
 

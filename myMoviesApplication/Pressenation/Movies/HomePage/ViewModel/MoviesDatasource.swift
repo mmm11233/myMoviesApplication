@@ -168,12 +168,10 @@ class MoviesDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
     
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        // Calculate the percentage of the scroll view that has been scrolled
         let yOffset = scrollView.contentOffset.y
         let contentHeight = scrollView.contentSize.height
         let percentageScrolled = yOffset / (contentHeight - scrollView.frame.height)
         
-        // Change the navigation bar color based on the percentage scrolled
         let newColor = UIColor(red: percentageScrolled, green: percentageScrolled, blue: percentageScrolled, alpha: 1.0)
         navigation.navigationBar.barTintColor = newColor
     }
@@ -181,18 +179,12 @@ class MoviesDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
 }
 
 
-//extension MoviesDataSource: MoviesDetailsDelegate {
-//    func didSelect(movie: MoviesViewModel) {
-//        let storyboard = UIStoryboard(name: "DetailsViewController", bundle: nil)
-//        let vC = storyboard.instantiateViewController(withIdentifier: "DetailsViewController") as! DetailsViewController
-//        vC.detailsMovies = movie
-//        navigation.pushViewController(vC, animated: true)
-//    }
-//}
-
 extension MoviesDataSource: MoviesDetailsDelegate {
     func didSelect(movie: MoviesViewModel) {
-        animationStart?(movie)
+        let storyboard = UIStoryboard(name: "DetailsViewController", bundle: nil)
+        let vC = storyboard.instantiateViewController(withIdentifier: "DetailsViewController") as! DetailsViewController
+        vC.detailsMovies = movie
+        navigation.pushViewController(vC, animated: true)
     }
 }
 

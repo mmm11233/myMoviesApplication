@@ -16,6 +16,7 @@ final  class MoviesListViewModel {
     var onReceivedPopular: (([MoviesViewModel]) -> Void)?
     var onReceivedupcomingMovies: (([MoviesViewModel]) -> Void)?
     var onReceivedTopRated: (([MoviesViewModel]) -> Void)?
+    var didSelect: (([MoviesViewModel]) -> Void)?
 
 
     
