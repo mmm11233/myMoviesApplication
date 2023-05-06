@@ -20,37 +20,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         
-//        guard let windowScene = (scene as? UIWindowScene) else { return }
-//
-//        // Create a new window
-//        let window = UIWindow(windowScene: windowScene)
-//        window.frame = windowScene.coordinateSpace.bounds
-//
-//        // Add a blur effect to the window's content view
-//        let blurEffect = UIBlurEffect(style: .regular)
-//        let blurView = UIVisualEffectView(effect: blurEffect)
-//        blurView.frame = window.bounds
-//        window.addSubview(blurView)
-//
-//        let vc = UIStoryboard(name: "MainTabBarViewController", bundle: nil).instantiateViewController(withIdentifier: "MainTabBarViewController")
-//        window.rootViewController = vc
-//
-//        // Set the window as the scene's window
-//        self.window = window
-//        window.makeKeyAndVisible()
-//
-        
-        
         guard let scene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: scene)
         window?.makeKeyAndVisible()
-        let vc = UIStoryboard(name: "MainTabBarViewController", bundle: nil).instantiateViewController(withIdentifier: "MainTabBarViewController")
-        window?.rootViewController = vc
-        
-
-        
-        
-
+        let navigation = UINavigationController()
+        let vc = UIStoryboard(name: "SignInViewController", bundle: nil).instantiateViewController(withIdentifier: "SignInViewController")
+        navigation.setViewControllers([vc], animated: true)
+        window?.rootViewController = navigation
     }    
 
     func sceneDidDisconnect(_ scene: UIScene) {
