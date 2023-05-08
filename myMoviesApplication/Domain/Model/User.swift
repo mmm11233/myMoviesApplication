@@ -8,7 +8,16 @@
 import Foundation
 struct User: Codable {
     let userName: String
-    let Email: String
+    let email: String
     let password: String
     let confirmPassword: String
+    
+    func toDictionary() -> [String: Any] {
+            return [
+                "userName": self.userName,
+                "email": self.email,
+                "password": self.password,
+                "confirmPassword": self.confirmPassword
+            ]
+        }
 }

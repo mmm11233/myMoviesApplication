@@ -27,7 +27,6 @@ class DetailsViewController: UIViewController {
         if let detailsMovies = detailsMovies {
             configure(with: detailsMovies)
         }
-        
     }
 
     @IBAction func onDownload(_ sender: Any) {

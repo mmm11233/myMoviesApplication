@@ -8,7 +8,6 @@
 import UIKit
 
 class SignInViewController: UIViewController {
-
     @IBOutlet weak var titleLbl: UILabel!
     @IBOutlet weak var EmailLbl: UITextField!
     @IBOutlet weak var PasswordLbl: UITextField!
@@ -21,7 +20,6 @@ class SignInViewController: UIViewController {
         super.viewDidLoad()
         signUp.layer.cornerRadius = 10
         signIn.layer.cornerRadius = 10
-
     }
     
     func checkCredentials(username: String?, password: String?) -> Bool {
@@ -32,19 +30,13 @@ class SignInViewController: UIViewController {
         return false
     }
 
-    
     @IBAction func onSignIn(_ sender: UIButton) {
-        if checkCredentials(username: usernameTextField.text, password: passwordTextField.text) {
-            
+        if let user = AuthenticationService(userDao: .init()).authenticate(email: EmailLbl.text ?? "", password: PasswordLbl.text ?? "") {
             let sb = UIStoryboard(name: "MainTabBarViewController", bundle: nil)
             let vc = sb.instantiateViewController(withIdentifier: "MainTabBarViewController")
             navigationController?.pushViewController(vc, animated: false)
-            
-        }else {
-            // credentials are invalid, show error message
-            let alert = UIAlertController(title: "Invalid Credentials", message: "Please enter valid credentials.", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
+        } else {
+            print("veraa ragaca es sheni user")
         }
     }
     
@@ -53,5 +45,4 @@ class SignInViewController: UIViewController {
         let vc = sb.instantiateViewController(withIdentifier: "SignUpViewController")
         navigationController?.pushViewController(vc, animated: false)
     }
-    
 }

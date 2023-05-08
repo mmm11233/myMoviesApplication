@@ -16,7 +16,7 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var ConfirmPasswordLbl: UITextField!
     @IBOutlet weak var signUp: UIButton!
     
-    var users: [String] = []
+//    var users = [User]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +26,6 @@ class SignUpViewController: UIViewController {
 
    
     @IBAction func onSignUp(_ sender: UIButton) {
-        let user = User(userName: UserNameLbl.text ?? "", Email: EmailLbl.text ?? "", password: PasswordLbl.text ?? "", confirmPassword: ConfirmPasswordLbl.text ?? "")
+        RegistrationService(userDao: .init()).registerUser(userName: UserNameLbl.text ?? "", email: EmailLbl.text ?? "", password: PasswordLbl.text ?? "", confirmPassword: PasswordLbl.text ?? "")
     }
-    
 }

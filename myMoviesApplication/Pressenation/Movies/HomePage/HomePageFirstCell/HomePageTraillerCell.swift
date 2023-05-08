@@ -10,14 +10,13 @@ import UIKit
 class HomePageTraillerCell: UITableViewCell {
     
     @IBOutlet weak var topRatedImg: UIImageView!
-    
     @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var downloadButton: UIButton!
-    
     @IBOutlet weak var stackView: UIStackView!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        
     }
     
     
@@ -36,7 +35,6 @@ class HomePageTraillerCell: UITableViewCell {
         addradient()
         
     }
-    
     
     
     @IBAction func onPlay(_ sender: Any) {
